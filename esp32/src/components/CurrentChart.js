@@ -2,12 +2,13 @@ import {
   Chart,
   CategoryScale,
   LinearScale,
-  BarElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
+  PointElement,
 } from 'chart.js';
-import { Bar} from 'react-chartjs-2';
+import { Line} from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 
 
@@ -15,7 +16,8 @@ const CurrentChart = () => {
 Chart.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -44,7 +46,7 @@ const data = {
   ],
 };
   return (
-<Bar options={options} data={data} 
+<Line options={options} data={data}
 className='w-96'
 />
   )

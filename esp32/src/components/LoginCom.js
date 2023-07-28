@@ -1,8 +1,9 @@
 import React from 'react'
+import { login } from '../firebase'
 
 const LoginCom = () => {
   return (
-<div className="flex flex-col justify-center h-screen items-center"> 
+<div className="flex flex-col justify-center h-screen items-center">
   <h3 className="mb-5 text-3xl">LOGIN</h3>
 <form className="md:w-96 p-2 shadow-sm">
   <div class="mb-6">
@@ -19,7 +20,7 @@ const LoginCom = () => {
     </div>
     <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
   </div>
-  <div type="submit" onClick={()=>{}} class="text-white bg-blue-700 md:w-full hover:bg-blue-800  font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center">Submit</div>
+  <div type="submit" onClick={login()} class="text-white bg-blue-700 md:w-full hover:bg-blue-800  font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center">Submit</div>
 </form>
     </div>
   )

@@ -2,12 +2,13 @@ import {
   Chart,
   CategoryScale,
   LinearScale,
-  BarElement,
   Title,
   Tooltip,
   Legend,
+  LineElement,
+  PointElement,
 } from 'chart.js';
-import { Bar} from 'react-chartjs-2';
+import { Line} from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 
 
@@ -15,7 +16,8 @@ const Powerchart = () => {
 Chart.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -28,7 +30,7 @@ Chart.register(
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
+      text: 'Chart.js line Chart',
     },
   },
 };
@@ -44,7 +46,7 @@ const data = {
   ],
 };
   return (
-<Bar options={options} data={data} 
+<Line options={options} data={data}
 className='w-96'
 />
   )

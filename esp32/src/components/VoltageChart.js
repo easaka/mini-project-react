@@ -2,12 +2,13 @@ import {
   Chart,
   CategoryScale,
   LinearScale,
-  BarElement,
   Title,
   Tooltip,
   Legend,
+  LineElement,
+  PointElement,
 } from 'chart.js';
-import { Bar} from 'react-chartjs-2';
+import { Line} from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 
 
@@ -15,7 +16,8 @@ const VoltageChart = () => {
 Chart.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -37,14 +39,14 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Power',
+      label: 'Voltage',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
   ],
 };
   return (
-<Bar options={options} data={data} 
+<Line options={options} data={data}
 className='w-96'
 />
   )
