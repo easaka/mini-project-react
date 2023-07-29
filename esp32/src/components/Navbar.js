@@ -1,18 +1,26 @@
-import  {Link}  from "react-router-dom";
+import  {Link, useNavigate}  from "react-router-dom";
 import {AiOutlineMenu} from "react-icons/ai"
 import { AiOutlineUser,AiFillBell} from "react-icons/ai";
 import { FiX} from "react-icons/fi";
 import { useState } from "react";
-
+import { auth } from "../firebase";
+import {signOut} from "firebase/auth"
 
 
 
 const Navbar = () => {
    const [show,setShow] = useState(false)
+   const navigate = useNavigate()
 
-   // const SignOut = async() =>{
-    
-   // }
+   const SignOut = async() =>{
+    signOut(auth).then(
+      navigate("/login")
+    ).catch(
+      (err)=>{
+         console.log(err)
+      }
+    )
+}
   return (
     <div className="p-2 border-b flex items-center sticky top-0 bg-white justify-between cursor-pointer">
        <div className="flex md:hidden p-2">
@@ -73,7 +81,7 @@ const Navbar = () => {
             }
              {/* <p className="m-2">manuel</p> */}
              <p className="p-1 rounded bg-blue-700 text-white"
-            
+             onClick={SignOut}
              >
               LogOut
             </p>

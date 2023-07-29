@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, } from "firebase/app";
-import {getAuth,signInWithEmailAndPassword,signOut} from "firebase/auth"
+import {getAuth,signInWithEmailAndPassword} from "firebase/auth"
 
 
 // Your web app's Firebase configuration
@@ -31,8 +31,8 @@ const login = async (email,password) =>{
   }
 }
 
-const logOut = ()=>{
-  signOut(auth)
-}
 
-export {login,logOut}
+
+
+
+export {login,auth}

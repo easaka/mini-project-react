@@ -1,5 +1,5 @@
 import {React, useState,} from 'react'
-import { useNavigate } from 'react-router-dom' 
+import { useNavigate } from 'react-router-dom'
 import { login } from '../firebase'
 
 const LoginCom = () => {
@@ -7,8 +7,11 @@ const LoginCom = () => {
   const [password,setPassword]=useState("")
   const navigate = useNavigate()
   const signIn = async () => {
-    await login(email, password)
-    navigate('/home')
+    await login(email, password).then(
+      navigate('/home')
+    ).catch((err)=>{
+      console.log(err)
+    })
   };
   return (
 <div className="flex flex-col justify-center h-screen items-center">
@@ -28,7 +31,7 @@ const LoginCom = () => {
     </div>
     <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
   </div>
-  <div type="submit" onClick={signIn()} class="text-white bg-blue-700 md:w-full hover:bg-blue-800  font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center">Submit</div>
+  <div type="submit" onClick={signIn} class="text-white bg-blue-700 md:w-full hover:bg-blue-800  font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center">Submit</div>
 </form>
     </div>
   )
