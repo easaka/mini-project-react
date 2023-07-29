@@ -1,5 +1,4 @@
 
-import Powerchart from "../components/Powerchart";
 import Tcom from "../components/Tcom"
 import { AiOutlineThunderbolt,AiFillApi,AiFillBulb} from "react-icons/ai";
 import { Link } from "react-router-dom";
