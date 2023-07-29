@@ -1,11 +1,14 @@
-import {React, useState} from 'react'
+import {React, useState,} from 'react'
+import { useNavigate } from 'react-router-dom' 
 import { login } from '../firebase'
 
 const LoginCom = () => {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
+  const navigate = useNavigate()
   const signIn = async () => {
     await login(email, password)
+    navigate('/home')
   };
   return (
 <div className="flex flex-col justify-center h-screen items-center">
