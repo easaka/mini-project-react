@@ -3,7 +3,7 @@ import {AiOutlineMenu} from "react-icons/ai"
 import { AiOutlineUser,AiFillBell} from "react-icons/ai";
 import { FiX} from "react-icons/fi";
 import { useState } from "react";
-import { logOut } from "../firebase";
+
 
 
 
@@ -73,7 +73,7 @@ const Navbar = () => {
             }
              {/* <p className="m-2">manuel</p> */}
              <p className="p-1 rounded bg-blue-700 text-white"
-             onClick={SignOut}
+            
              >
               LogOut
             </p>
