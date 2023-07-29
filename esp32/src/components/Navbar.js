@@ -11,7 +11,7 @@ const Navbar = () => {
    const [show,setShow] = useState(false)
 
    const SignOut = async() =>{
-    logOut()
+    
    }
   return (
     <div className="p-2 border-b flex items-center sticky top-0 bg-white justify-between cursor-pointer">
